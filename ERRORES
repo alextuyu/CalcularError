@@ -1,0 +1,34 @@
+package Errores;
+import java.util.Scanner;
+public class Errores{
+    private double valorRE, valorAPO;
+    double errorabsoluto,errorRelativo, errorPorcentual;
+    public errores (double a, double b){
+        valorRE=a;
+        valorAPO=b;
+    }
+    public double errorA (){
+        errorabsoluto=valorRE-valorAPO;
+        return errorabsoluto;
+    }
+    public double errorR (){
+        errorRelativo=errorA ()/valorRE;
+        return errorRelativo;
+    }
+    public double errorPO (){
+        errorPorcentual=errorRE ()*100;
+        return errorPorcentual;
+    }
+    public static void main(String[] args) {
+        Scanner Lr = new Scanner(System.in);
+        System.out.println("ingrese el valor real");
+        double a=Lr.nextDouble();
+        System.out.println("ingrese el valor aproximado");
+        double b=Lr.nextDouble();
+        errores obj=new errores(a,b);
+        System.out.println(""+obj.errorA());
+        System.out.println(""+obj.errorRE());
+        System.out.println(obj.errorAPO()+"%");
+    }
+    
+}
